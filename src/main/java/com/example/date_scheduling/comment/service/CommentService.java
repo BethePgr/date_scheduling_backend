@@ -37,7 +37,7 @@ public class CommentService {
     public CommentEntity modifyServ(CommentEntity commentEntity){
         boolean modify = repository.modify(commentEntity);
         if (!modify){
-            log.warn("modify fail! Commententity를 잘못 입력한 가능성이 큽니다.");
+            log.warn("modify fail! CommentEntity를 잘못 입력한 가능성이 큽니다.");
         }
         return modify ? showOneServ(commentEntity.getCommentid()) : null;
     }
