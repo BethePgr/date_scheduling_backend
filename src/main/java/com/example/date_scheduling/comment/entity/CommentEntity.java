@@ -1,0 +1,34 @@
+package com.example.date_scheduling.comment.entity;
+
+import lombok.*;
+
+import java.util.Date;
+import java.util.UUID;
+
+
+@Getter @Setter @ToString
+
+@AllArgsConstructor
+public class CommentEntity {
+    //이 댓글만의 고유한 id
+    private String commentid;
+    //어떤 게시글에 답글을 달았는지 알기위한 post의 id
+    private String postid;
+    //어떤 유저가 답글을 달았는지 알기위한 유저의 id
+    private String userid;
+    //댓글을 작성한 시간
+    private Date regdate;
+    //댓글의 내용
+    private String content;
+
+    public CommentEntity(){
+        this.commentid = UUID.randomUUID().toString();
+    }
+
+    public CommentEntity(String postid, String userid, String content){
+        this();
+        this.postid=postid;
+        this.userid=userid;
+        this.content=content;
+    }
+}
