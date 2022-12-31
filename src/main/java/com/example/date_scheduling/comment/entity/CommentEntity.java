@@ -13,6 +13,7 @@ public class CommentEntity {
     //이 댓글만의 고유한 id
     private String commentid;
     //어떤 게시글에 답글을 달았는지 알기위한 post의 id
+    // db에서 테이블을 작성할때 null가능하게 해야지 오류 안 뜸
     private String postid;
     //어떤 유저가 답글을 달았는지 알기위한 유저의 id
     private String userid;

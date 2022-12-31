@@ -1,5 +1,6 @@
 package com.example.date_scheduling.comment.api;
 
+import com.example.date_scheduling.comment.dto.JustContent;
 import com.example.date_scheduling.comment.dto.PostandCommentid;
 import com.example.date_scheduling.comment.entity.CommentEntity;
 import com.example.date_scheduling.comment.service.CommentService;
@@ -32,12 +33,14 @@ public class CommentApiController {
     }
 
     @PostMapping
-    public ResponseEntity<?> save(@AuthenticationPrincipal String username,@RequestBody String content){
+    public ResponseEntity<?> save(@AuthenticationPrincipal String username, @RequestBody JustContent content){
         try{
         CommentEntity commentEntity = new CommentEntity();
-        commentEntity.setPostid("068ac7a8-16e1-4b7f-a271-65f3714e21a1");
+
+        //지금은 임의로 설정한것임.
+        //commentEntity.setPostid("068ac7a8-16e1-4b7f-a271-65f3714e21a1");
         commentEntity.setUserid(username);
-        commentEntity.setContent(content);
+        commentEntity.setContent(content.getContent());
         return ResponseEntity.ok().body(service.saveServ(commentEntity));
         }catch(RuntimeException e){
             return ResponseEntity.badRequest().body(e.getMessage());
