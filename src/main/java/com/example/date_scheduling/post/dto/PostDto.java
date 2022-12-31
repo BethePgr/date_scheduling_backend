@@ -1,6 +1,7 @@
 package com.example.date_scheduling.post.dto;
 
 import com.example.date_scheduling.post.entity.Post;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.util.Date;
@@ -18,6 +19,8 @@ public class PostDto {
     private String title;
     private String content;
     private String image;
+
+    @JsonFormat(pattern = "yyyy-MM-dd a HH:mm", timezone = "Asia/Seoul")
     private Date regDate;
 
     // Post에서 PostDto가 필요한 필드를 빼오는 생성자
