@@ -78,6 +78,15 @@ public class UserController {
         return ResponseEntity.ok().body(flag3);
     }
 
+    @PutMapping("/put")
+    public ResponseEntity<?> change(UserEntity entity){
+        try {
+            UserEntity userEntity = userService.changeServ(entity);
+            return ResponseEntity.ok().body(userEntity);
+        }catch(RuntimeException e){
+            return ResponseEntity.badRequest().body(new ErrorDTO(e.getMessage()));
+        }
+    }
 
 
 
