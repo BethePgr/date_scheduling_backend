@@ -17,8 +17,8 @@ class UserControllerTest {
     @DisplayName("잘 교환되나")
     void changeit(){
         //given
-        UserEntity userEntity = new UserEntity("2328de322d3-f78c-44ff-a95f-6aabbfc03135",
-                "닉후후후","아이디원","c3392302@naver.com","a123123!@");
+        UserEntity userEntity = new UserEntity("a25afb31-e7aa-4bbd-9f22-cf4143c5ae3c",
+                "닉네임즈","nickname","c33@naver.com","a123123!@");
         //when
         UserEntity userEntity1 = service.changeServ(userEntity);
         //then

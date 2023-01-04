@@ -3,7 +3,6 @@ package com.example.date_scheduling.post.api;
 import com.example.date_scheduling.error.ErrorDTO;
 import com.example.date_scheduling.post.dto.CategoryDto;
 import com.example.date_scheduling.post.dto.FindAllPostDto;
-import com.example.date_scheduling.post.dto.PostDto;
 import com.example.date_scheduling.post.dto.RequestPostDto;
 import com.example.date_scheduling.post.entity.Category;
 import com.example.date_scheduling.post.entity.Post;
@@ -14,8 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @Slf4j  // 로깅을 위해
@@ -75,7 +72,7 @@ public class PostApiController {
         Post newPost = requestPostDto.getPost();
         Category category = requestPostDto.getCategory();
 
-        newPost.setUserId(username);
+
         log.info("/api/reviews POST request! - {}", newPost);
 
         try{

@@ -79,7 +79,7 @@ public class UserController {
     }
 
     @PutMapping("/put")
-    public ResponseEntity<?> change(UserEntity entity){
+    public ResponseEntity<?> change(@RequestBody  UserEntity entity){
         try {
             UserEntity userEntity = userService.changeServ(entity);
             return ResponseEntity.ok().body(userEntity);

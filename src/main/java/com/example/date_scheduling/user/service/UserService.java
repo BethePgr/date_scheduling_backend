@@ -52,7 +52,10 @@ public class UserService {
 
     //userentity를 입력받아 정보 바꿔주기
     public UserEntity changeServ(UserEntity entity){
+        String rawPw = entity.getPassword();
+        entity.setPassword(encoder.encode(rawPw));
         boolean flag = userRepository.change(entity);
+
         if(!flag) throw new RuntimeException("잘 변경되지 않았습니다.");
         return flag? getByEmail(entity.getEmail()) : null;
 

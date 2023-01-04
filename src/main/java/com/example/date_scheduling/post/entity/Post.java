@@ -26,7 +26,8 @@ public class Post {
     }
 
     // 유저가 게시물 등록할 때 직접 넣어야 할 데이터
-    public Post (String title, String content, String image, String cID) {
+    public Post (String userId,String title, String content, String image, String cID) {
+        this.userId = userId;
         this.title = title;
         this.content = content;
         this.image = image;
